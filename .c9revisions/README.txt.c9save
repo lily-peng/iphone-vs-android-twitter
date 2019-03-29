@@ -1,0 +1,76 @@
+{"ts":1374786006960,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1374786039856,"patch":[[{"diffs":[[1,"Files Us"]],"start1":0,"start2":0,"length1":0,"length2":8}]],"length":8,"saved":false}
+{"ts":1374786048907,"patch":[[{"diffs":[[0,"Files Us"],[1,"ed for the Creation of Our Website:\n\n\n\n"]],"start1":0,"start2":0,"length1":8,"length2":47}]],"length":47,"saved":false}
+{"ts":1374786051816,"patch":[[{"diffs":[[0,"bsite:\n\n"],[1,"codebird.js\n"],[0,"\n\n"]],"start1":37,"start2":37,"length1":10,"length2":22}]],"length":59,"saved":false}
+{"ts":1374786054988,"patch":[[{"diffs":[[0,"bird.js\n"],[1,"sha1.js"],[0,"\n\n"]],"start1":49,"start2":49,"length1":10,"length2":17}]],"length":66,"saved":false}
+{"ts":1374786057066,"patch":[[{"diffs":[[0,"ha1.js\n\n"],[1,"\n"]],"start1":58,"start2":58,"length1":8,"length2":9}]],"length":67,"saved":false}
+{"ts":1374786072644,"patch":[[{"diffs":[[0,"ha1.js\n\n"],[1,"from https://github.com/mynetx/codebird-js\n"],[0,"\n"]],"start1":58,"start2":58,"length1":9,"length2":52}]],"length":110,"saved":false}
+{"ts":1374786081519,"patch":[[{"diffs":[[0,"odebird-js\n\n"],[1,"Our "]],"start1":98,"start2":98,"length1":12,"length2":16}]],"length":114,"saved":false}
+{"ts":1374786087424,"patch":[[{"diffs":[[0,"ird-js\n\nOur "],[1,"HTML files:\nind"]],"start1":102,"start2":102,"length1":12,"length2":27}]],"length":129,"saved":false}
+{"ts":1374786089552,"patch":[[{"diffs":[[0,"les:\nind"],[1,"ex.html"]],"start1":121,"start2":121,"length1":8,"length2":15}]],"length":136,"saved":false}
+{"ts":1374786097580,"patch":[[{"diffs":[[0,"dex.html"],[1," "]],"start1":128,"start2":128,"length1":8,"length2":9}]],"length":137,"saved":false}
+{"ts":1374786099756,"patch":[[{"diffs":[[0,"ex.html "],[1,"at "]],"start1":129,"start2":129,"length1":8,"length2":11}]],"length":140,"saved":false}
+{"ts":1374786105479,"patch":[[{"diffs":[[0,"html at "],[1,"https://c9.io/necomni/journalism/workspace/index.html"]],"start1":132,"start2":132,"length1":8,"length2":61}]],"length":193,"saved":false}
+{"ts":1374787065508,"patch":[[{"diffs":[[0,"e:\n\n"],[-1,"codebird.js\nsha1.js\n\nfrom https://github.com/mynetx/codebird-js\n\n"],[0,"Our "]],"start1":41,"start2":41,"length1":73,"length2":8}]],"length":128,"saved":false}
+{"ts":1374787066783,"patch":[[{"diffs":[[0,"space/index.html"],[1,"\n\n"]],"start1":112,"start2":112,"length1":16,"length2":18}]],"length":130,"saved":false}
+{"ts":1374787067989,"patch":[[{"diffs":[[0,"x.html\n\n"],[1,"codebird.js\nsha1.js\n\nfrom https://github.com/mynetx/codebird-js"]],"start1":122,"start2":122,"length1":8,"length2":71}]],"length":193,"saved":false}
+{"ts":1374787070662,"patch":[[{"diffs":[[0,"x.html\n\n"],[1,"We used\n"],[0,"codebird"]],"start1":122,"start2":122,"length1":16,"length2":24}]],"length":201,"saved":false}
+{"ts":1374787072000,"patch":[[{"diffs":[[0,"sha1.js\n"],[-1,"\n"],[0,"from htt"]],"start1":150,"start2":150,"length1":17,"length2":16}]],"length":200,"saved":false}
+{"ts":1374787075271,"patch":[[{"diffs":[[0,"bird.js\n"],[1,"and\n"],[0,"sha1.js\n"]],"start1":142,"start2":142,"length1":16,"length2":20}]],"length":204,"saved":false}
+{"ts":1374787080140,"patch":[[{"diffs":[[0,"x.html\n\n"],[1,"\n\n"],[0,"We used\n"]],"start1":122,"start2":122,"length1":16,"length2":18}]],"length":206,"saved":false}
+{"ts":1374787081881,"patch":[[{"diffs":[[0,"x.html\n\n"],[1,"All the ja"],[0,"\n\nWe use"]],"start1":122,"start2":122,"length1":16,"length2":26}]],"length":216,"saved":false}
+{"ts":1374787083904,"patch":[[{"diffs":[[0,"l the ja"],[1,"vascript "],[0,"\n\nWe use"]],"start1":132,"start2":132,"length1":16,"length2":25}]],"length":225,"saved":false}
+{"ts":1374787088197,"patch":[[{"diffs":[[0,"All the "],[1,"external "],[0,"javascri"]],"start1":130,"start2":130,"length1":16,"length2":25}]],"length":234,"saved":false}
+{"ts":1374787102416,"patch":[[{"diffs":[[0,"ascript "],[1,"files we used are integrated into the website, so users do not need to download anything fu"],[0,"\n\nWe use"]],"start1":150,"start2":150,"length1":16,"length2":107}]],"length":325,"saved":false}
+{"ts":1374787103893,"patch":[[{"diffs":[[0,"thing fu"],[1,"rther"],[0,"\n\nWe use"]],"start1":241,"start2":241,"length1":16,"length2":21}]],"length":330,"saved":false}
+{"ts":1374787105922,"patch":[[{"diffs":[[0," further"],[1,"."],[0,"\n\nWe use"]],"start1":246,"start2":246,"length1":16,"length2":17}]],"length":331,"saved":false}
+{"ts":1374808739805,"patch":[[{"diffs":[[0,"ebird-js"],[1,"\n\n"]],"start1":323,"start2":323,"length1":8,"length2":10}]],"length":333,"saved":false}
+{"ts":1374808750228,"patch":[[{"diffs":[[0,"ird-js\n\n"],[1,"What was done:\n\n\n"]],"start1":325,"start2":325,"length1":8,"length2":25}]],"length":350,"saved":false}
+{"ts":1374808752143,"patch":[[{"diffs":[[0,"s done:\n"],[1,"- we"],[0,"\n\n"]],"start1":340,"start2":340,"length1":10,"length2":14}]],"length":354,"saved":false}
+{"ts":1374808755221,"patch":[[{"diffs":[[0,"ne:\n- we"],[1," used "],[0,"\n\n"]],"start1":344,"start2":344,"length1":10,"length2":16}]],"length":360,"saved":false}
+{"ts":1374808761797,"patch":[[{"diffs":[[0,"we used "],[1,"an online IDE to w"],[0,"\n\n"]],"start1":350,"start2":350,"length1":10,"length2":28}]],"length":378,"saved":false}
+{"ts":1374808765121,"patch":[[{"diffs":[[0,"IDE to w"],[1,"rite code in HT"],[0,"\n\n"]],"start1":368,"start2":368,"length1":10,"length2":25}]],"length":393,"saved":false}
+{"ts":1374808770537,"patch":[[{"diffs":[[0,"de in HT"],[1,"ML, Javascript, and CSS for the website\n= "],[0,"\n\n"]],"start1":383,"start2":383,"length1":10,"length2":52}]],"length":435,"saved":false}
+{"ts":1374808773127,"patch":[[{"diffs":[[0,"ite\n"],[-1,"="],[1,"-"],[0," \n\n"]],"start1":427,"start2":427,"length1":8,"length2":8}]],"length":435,"saved":false}
+{"ts":1374808776771,"patch":[[{"diffs":[[0,"line IDE"],[1," ("],[0," to writ"]],"start1":363,"start2":363,"length1":16,"length2":18}]],"length":437,"saved":false}
+{"ts":1374808779407,"patch":[[{"diffs":[[0,"ne IDE ("],[1,"c9.io)"],[0," to writ"]],"start1":365,"start2":365,"length1":16,"length2":22}]],"length":443,"saved":false}
+{"ts":1374808791818,"patch":[[{"diffs":[[0,"ne IDE ("],[1,"https://"],[0,"c9.io"],[1,"/"],[0,") to wri"]],"start1":365,"start2":365,"length1":21,"length2":30}]],"length":452,"saved":false}
+{"ts":1374808795336,"patch":[[{"diffs":[[0,"done:\n- "],[-1,"w"],[1,"W"],[0,"e used a"]],"start1":342,"start2":342,"length1":17,"length2":17}]],"length":452,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1374808918941,"patch":[[{"diffs":[[0,"bsite:\n\n"],[1,"https://c9.io/necomni/journalism/workspace/index.html\n\n"],[0,"Our HTML"]],"start1":37,"start2":37,"length1":16,"length2":71}]],"length":507,"saved":false}
+{"ts":1374808936094,"patch":[[{"diffs":[[0,"bsite\n- "],[1,"The website co"],[0,"\n\n"]],"start1":497,"start2":497,"length1":10,"length2":24}]],"length":521,"saved":false}
+{"ts":1374808942667,"patch":[[{"diffs":[[0,"bsite co"],[1,"de was written in index.html, which "],[0,"\n\n"]],"start1":511,"start2":511,"length1":10,"length2":46}]],"length":557,"saved":false}
+{"ts":1374808957178,"patch":[[{"diffs":[[0,", which "],[1,"imported from codebird.jf"],[0,"\n\n"]],"start1":547,"start2":547,"length1":10,"length2":35}]],"length":582,"saved":false}
+{"ts":1374808960457,"patch":[[{"diffs":[[0,"debird.j"],[-1,"f"],[1,"s and sa"],[0,"\n\n"]],"start1":571,"start2":571,"length1":11,"length2":18}]],"length":589,"saved":false}
+{"ts":1374808962128,"patch":[[{"diffs":[[0,"js and s"],[-1,"a"],[1,"ha1.js"],[0,"\n\n"]],"start1":578,"start2":578,"length1":11,"length2":16}]],"length":594,"saved":false}
+{"ts":1374808962984,"patch":[[{"diffs":[[0,"nd sha1.js\n\n"],[1,"\n"]],"start1":582,"start2":582,"length1":12,"length2":13}]],"length":595,"saved":false}
+{"ts":1374808963600,"patch":[[{"diffs":[[0,"sha1.js\n"],[1,"- "],[0,"\n\n"]],"start1":585,"start2":585,"length1":10,"length2":12}]],"length":597,"saved":false}
+{"ts":1374808965042,"patch":[[{"diffs":[[0,"a1.js\n- "],[1,"        <script type=\"text/javascript\" src=\"sha1.js\"></script>\n        <script type=\"text/javascript\" src=\"codebird.js\"></script>\n        <script type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?sensor=false\"></script>\n        <script type=\"text/javascript\" src=\"js/jquery-1.8.3.min.js\"></script>"],[0,"\n\n"]],"start1":587,"start2":587,"length1":10,"length2":325}]],"length":912,"saved":false}
+{"ts":1374808969098,"patch":[[{"diffs":[[0,"1.js"],[-1,"\n-         <script type=\"text/javascript\" src=\"sha1.js\"></script>\n        <script type=\"text/javascript\" src=\"codebird.js\"></script>\n        <script type=\"text/javascript\" src=\""],[0,"http"]],"start1":588,"start2":588,"length1":185,"length2":8}]],"length":735,"saved":false}
+{"ts":1374808971322,"patch":[[{"diffs":[[0," sha1.js"],[1,", "],[0,"https://"]],"start1":584,"start2":584,"length1":16,"length2":18}]],"length":737,"saved":false}
+{"ts":1374808973096,"patch":[[{"diffs":[[0,"ebird.js"],[-1," and "],[1,","],[0,"sha1.js,"]],"start1":572,"start2":572,"length1":21,"length2":17}]],"length":733,"saved":false}
+{"ts":1374808974063,"patch":[[{"diffs":[[0,"bird.js,"],[1," "],[0,"sha1.js,"]],"start1":573,"start2":573,"length1":16,"length2":17}]],"length":734,"saved":false}
+{"ts":1374808981846,"patch":[[{"diffs":[[0,"pt>\n"],[-1,"        <script type=\"text/javascript\" src=\""],[1,"\n"],[0,"js/j"]],"start1":651,"start2":651,"length1":52,"length2":9}]],"length":691,"saved":false}
+{"ts":1374808989857,"patch":[[{"diffs":[[0,"i/js"],[-1,"?sensor=false\"></script>"],[0,"\n\njs"]],"start1":626,"start2":626,"length1":32,"length2":8}]],"length":667,"saved":false}
+{"ts":1374808995481,"patch":[[{"diffs":[[0," sha1.js"],[-1,","],[1," from Codebird API"],[0," https:/"]],"start1":581,"start2":581,"length1":17,"length2":34}]],"length":684,"saved":false}
+{"ts":1374808997939,"patch":[[{"diffs":[[0,"ed from "],[1,"\n    "],[0,"codebird"]],"start1":561,"start2":561,"length1":16,"length2":21}]],"length":689,"saved":false}
+{"ts":1374808999763,"patch":[[{"diffs":[[0,"rom \n   "],[1," -"],[0," codebir"]],"start1":565,"start2":565,"length1":16,"length2":18}]],"length":691,"saved":false}
+{"ts":1374809001910,"patch":[[{"diffs":[[0,"ebird.js"],[-1,","],[1," and"],[0," sha1.js"]],"start1":579,"start2":579,"length1":17,"length2":20}]],"length":694,"saved":false}
+{"ts":1374809004822,"patch":[[{"diffs":[[0,"bird API"],[1,"\n    -"],[0," https:/"]],"start1":609,"start2":609,"length1":16,"length2":22}]],"length":700,"saved":false}
+{"ts":1374809008576,"patch":[[{"diffs":[[0,"ebird.js"],[-1,"\n"],[1," "],[0,"and\nsha1"]],"start1":323,"start2":323,"length1":17,"length2":17}]],"length":700,"saved":false}
+{"ts":1374809010314,"patch":[[{"diffs":[[0,"d.js and"],[-1,"\n"],[1," "],[0,"sha1.js\n"]],"start1":327,"start2":327,"length1":17,"length2":17}]],"length":700,"saved":false}
+{"ts":1374809014383,"patch":[[{"diffs":[[0,"\nWe used"],[1,":"],[0,"\ncodebir"]],"start1":311,"start2":311,"length1":16,"length2":17}]],"length":701,"saved":false}
+{"ts":1374809017062,"patch":[[{"diffs":[[0," sha1.js"],[-1,"\n"],[1," "],[0,"from htt"]],"start1":336,"start2":336,"length1":17,"length2":17}]],"length":701,"saved":false}
+{"ts":1374809020543,"patch":[[{"diffs":[[0,"ird-js\n\n"],[1,"\n\n"],[0,"What was"]],"start1":381,"start2":381,"length1":16,"length2":18}]],"length":703,"saved":false}
+{"ts":1374809070803,"patch":[[{"diffs":[[0,"bird-js\n"],[1,"Google Maps API"],[0,"\n\n\nWhat "]],"start1":380,"start2":380,"length1":16,"length2":31}]],"length":718,"saved":false}
+{"ts":1374809097384,"patch":[[{"diffs":[[0,"Maps API"],[1," https://developers.google.com/maps/documentation/javascript/"],[0,"\n\n\nWhat "]],"start1":395,"start2":395,"length1":16,"length2":77}]],"length":779,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1374809158590,"patch":[[{"diffs":[[0,"i/js"],[-1,"\n\njs/"],[1," from Google Maps API\n    - "],[0,"jque"]],"start1":738,"start2":738,"length1":13,"length2":36},{"diffs":[[0,"n.js"],[-1,"\"></script>\n\n"],[1," (jQuery)\n- "]],"start1":785,"start2":785,"length1":17,"length2":16}]],"length":801,"saved":false}
+{"ts":1374809199325,"patch":[[{"diffs":[[0,"uery)\n- "],[1,"Javascript"]],"start1":793,"start2":793,"length1":8,"length2":18}]],"length":811,"saved":false}
+{"ts":1374809203940,"patch":[[{"diffs":[[0,"Query)\n-"],[1," Heavy use of"],[0," Javascr"]],"start1":792,"start2":792,"length1":16,"length2":29}]],"length":824,"saved":false}
+{"ts":1374809210467,"patch":[[{"diffs":[[0,"se of Javascript"],[1,", some HTML and CSS to build the website\n"]],"start1":808,"start2":808,"length1":16,"length2":57}]],"length":865,"saved":false}
+{"ts":1374809211292,"patch":[[{"diffs":[[0,"to build the website"],[-1,"\n"]],"start1":844,"start2":844,"length1":21,"length2":20}]],"length":864,"saved":false}
+{"ts":1374809232375,"patch":[[{"diffs":[[0,"jQuery)\n"],[1,"- \n"],[0,"- Heavy "]],"start1":791,"start2":791,"length1":16,"length2":19}]],"length":867,"saved":false}
+{"ts":1374809236083,"patch":[[{"diffs":[[0,"uery)\n- "],[1,"Had to understand "],[0,"\n- Heavy"]],"start1":793,"start2":793,"length1":16,"length2":34}]],"length":885,"saved":false}
+{"ts":1374809238484,"patch":[[{"diffs":[[0,"erstand "],[1,"Twitter v1.1"],[0,"\n- Heavy"]],"start1":811,"start2":811,"length1":16,"length2":28}]],"length":897,"saved":false}
+{"ts":1374809240767,"patch":[[{"diffs":[[0,"ter v1.1"],[1," API"],[0,"\n- Heavy"]],"start1":823,"start2":823,"length1":16,"length2":20}]],"length":901,"saved":false}
+{"ts":1374809243830,"patch":[[{"diffs":[[0,"erstand "],[1,"the new "],[0,"Twitter "]],"start1":811,"start2":811,"length1":16,"length2":24}]],"length":909,"saved":false}
+{"ts":1374809249798,"patch":[[{"diffs":[[0,"v1.1 API"],[1," and Google Maps API"],[0,"\n- Heavy"]],"start1":835,"start2":835,"length1":16,"length2":36}]],"length":929,"saved":false}

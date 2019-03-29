@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+    <head>
+        <center><img src="http://i.imgur.com/Cbp5C26.jpg"></img></center>
+        
+        <script type="text/javascript" src="sha1.js"></script>
+        <script type="text/javascript" src="codebird.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
+        
+        <script type="text/javascript">
+        
+                
+            var found = 0;
+            var good = [];
+            var appImg = 'http://i.imgur.com/13n3scx.png';
+            var andImg = 'http://i.imgur.com/XvdmLyX.png';
+            
+            var cb = new Codebird;
+            //cb.setProxy("https://c9.io/necomni/journalism/codebird-cors-proxy/");
+            cb.setConsumerKey("rtWMkk73ERzBo0yvZ8SwFA", "JaCfJy8LEiwVNN6MhZTg2POqumH8SQjNHnDuEF8KI4");
+            cb.setToken("219779796-UDATLrDNeVX9OGBEPTi50Nm63e2pztORMKswWQ2Y", "QJ9HnHcVkPe29OfDRaLWuS5Px4J1gZObVanRKZ4psMA");
+            
+            var sn = "";
+            var maxid = 0;
+            var all = [];
+            var droid = 0;
+            var apple = 0;
+            var test = 0;
+            var map;
+            var mapArr = [];
+            
+            // moved this here so it's globally accessible
+            var callsCompleted = 0;
+            var callsNeeded = 15;
+
+            function onCallComplete() { 
+               callsCompleted++;
+               console.log("num calls completed so far: " + callsCompleted + "/" + callsNeeded);
+               if (callsCompleted >= callsNeeded) { 
+                    // do something
+                    /*
+                    for (var y=0; y<all.length - 1; y++) {
+                        if (all[y].text.indexOf("reviewed") !== -1) { //indexOf -1 = not found
+                            droid++;
+                        }
+                    }*/
+                    
+                    // var resultsdiv = document.getElementById("results");
+                    // resultsdiv.innerHTML += "iPhone Score:" + apple + "<br\>";
+                    // resultsdiv.innerHTML += "Android Score: " + droid + "<br\>";
+                    // resultsdiv.innerHTML += "Test Score: " + test + "<br\>";
+                    var openP = "<p style=\"font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;\">";
+                    var closeP = "</p>";
+                    document.write("<center>");
+                    document.write(openP);
+                    document.write("<b>" + "iPhone Score" + "</b>" + ": " + apple + "<br\>");
+                    document.write("<b>" + "Android Score"+ "</b>" + ": " + droid + "<br\>");
+                    document.write("<b>" + "Total Tweets Gathered" + "</b>" + ": " + all.length + "<br\>");
+                    
+                    if (apple > droid) {
+                        document.write("<img src=\"http://i.imgur.com/avglKoM.jpg\"></img>" + "<br\>" + "<br\>");
+                    }
+                    else if (apple < droid) {
+                        document.write("<img src=\"http://i.imgur.com/bqvxPVy.jpg\"></img>" + "<br\>" + "<br\>");
+                    }
+                    else {
+                        document.write("<p></p>" + "You're neutral on the issue." + "<p></p>"+ "<img src=\"http://i.imgur.com/qMljB3c.png\"></img>" + "<br\>" + "<br\>" + "<br\>");
+                    }
+                    
+
+                    document.write("Terms Searched: " + "<br\>");
+                    document.write("<table width=\"400\">");
+                    document.write("<tr><th>iPhone</th><th>Android</th></tr>");
+                    document.write("<tr><td><center>Apple</center></td><td><center>Droid</center></td></tr>");
+                    document.write("<tr><td><center>iPhone</center></td><td><center>Android</center></td></tr>");
+                    document.write("<tr><td><center>iPad</center></td><td><center>Xperia</center></td></tr>");
+                    document.write("<tr><td><center>iOS</center></td><td><center>Samsung Galaxy</center></td></tr>");
+                    document.write("<tr><td><center>iPod</center></td><td><center>Nexus</center></td></tr>");
+                    document.write("<tr><td><center>Siri</center></td><td><center>Jellybean</center></td></tr>");
+                    document.write("<tr><td><center>iCloud</center></td><td><center>Google</center></td></tr>");
+                    document.write("</table>");
+                    
+                    /*document.write("iPhone: " + "<br\>");
+                    document.write("Apple" + "<br\>");
+                    document.write("iPhone" + "<br\>");
+                    document.write("iPad " + "<br\>");
+                    document.write("iOS" + "<br\>");
+                    document.write("iPod" + "<br\>");
+                    document.write("Siri" + "<br\>");
+                    document.write("iCloud" + "<p\>");
+                    
+                    document.write("Android: " + "<br\>");
+                    document.write("Droid" + "<br\>");
+                    document.write("Android" + "<br\>");
+                    document.write("Xperia" + "<br\>");
+                    document.write("Samsung Galaxy" + "<br\>");
+                    document.write("Nexus" + "<br\>");
+                    document.write("Jellybean" + "<br\>");*/
+                    document.write(closeP);
+                    
+                    document.write("</p>");
+                    document.write("</center>");
+                    
+                    //document.write("Test Score: " + test + "<br\>");
+                    console.log("droid: " + droid);
+                    console.log("Displaying all - " + all.length + " tweets");
+                    console.log(all);
+                    
+                }
+            }
+            
+            function readUser() {
+                var textBox = document.getElementById('TEXTBOX_ID');
+                sn = textBox.value;
+                console.log(sn);
+                readAllTweets();
+            }
+
+            function readAllTweets(){
+                var userParams1 = {
+                    screen_name: sn,
+                    count: 200
+                };
+                
+                // what does cb.__call return? <---------- collection of Tweets by the user 
+                // this is weirdly set up. allTweets1 gets the first 200 tweets
+                var allTweets1 = cb.__call(
+                    "statuses_userTimeline",
+                    userParams1,
+                    function (reply) {
+                        //console.log(reply);
+                        for (var i=0; i<reply.length; i++)
+                        { 
+                            //document.write(reply[i].text + "<p>");
+                            maxid = reply[i].id;
+                            
+                            //START KEYWORDS
+                            if (reply[i].text.toLowerCase().indexOf(" droid") != -1) {
+                                droid++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("android") != -1) {
+                                droid++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("xperia") != -1) {
+                                droid++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("samsung galaxy") != -1) {
+                                droid++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("jellybean") != -1) {
+                                droid++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("nexus") != -1) {
+                                droid++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("google") != -1) {
+                                droid++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("iphone") != -1) {
+                                apple++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("apple") != -1) {
+                                apple++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("ipad") != -1) {
+                                apple++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("siri") != -1) {
+                                apple++;
+                            }
+                            if (reply[i].text.indexOf("iOS") != -1) {
+                                apple++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("icloud") != -1) {
+                                apple++;
+                            }
+                            if (reply[i].text.toLowerCase().indexOf("ipod") != -1) {
+                                apple++;
+                            }
+                            //END KEYWORDS
+                            
+                            
+                            if (i==0) {
+                                all.push(reply[i]);
+                            }
+                            else {
+                                all.push(reply[i]);
+                            }
+                        }
+                        
+                        onCallComplete();
+                    }
+                );
+                
+                var userParams2 = {
+                    screen_name: sn,
+                    count: 200,
+                    max_id: maxid
+                };
+                
+                //allTweets2 loops, keeps getting tweets until it can't anymore. up to 3200 tweets total
+                for (var x=0; x<14; x++) {
+                    var allTweets2 = cb.__call(
+                        "statuses_userTimeline",
+                        userParams2,
+                        function (reply) {
+                            console.log(reply);
+                            for (var i=0; i<reply.length; i++)
+                            { 
+                                //document.write(reply[i].text + "<p>");
+                                maxid = reply[i].id;
+                                all.push(reply[i]);
+                                
+                                //START KEYWORDS
+                                if (reply[i].text.toLowerCase().indexOf(" droid") != -1) {
+                                    droid++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("android") != -1) {
+                                    droid++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("xperia") != -1) {
+                                    droid++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("samsung galaxy") != -1) {
+                                    droid++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("jellybean") != -1) {
+                                    droid++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("nexus") != -1) {
+                                    droid++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("google") != -1) {
+                                    droid++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("iphone") != -1) {
+                                    apple++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("apple") != -1) {
+                                    apple++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("ipad") != -1) {
+                                    apple++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("siri") != -1) {
+                                    apple++;
+                                }
+                                if (reply[i].text.indexOf("iOS") != -1) {
+                                    apple++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("icloud") != -1) {
+                                    apple++;
+                                }
+                                if (reply[i].text.toLowerCase().indexOf("ipod") != -1) {
+                                    apple++;
+                                }
+                                //END KEYWORDS
+                                
+                            }
+                            
+                            onCallComplete();
+                        } 
+                    );
+                }
+            }
+            
+            
+               function initialize() {
+                var mapDiv = document.getElementById('map-canvas');
+                map = new google.maps.Map(mapDiv, {
+                  center: new google.maps.LatLng(38, -97),
+                  zoom: 3,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+                
+                console.log("here1");
+                
+                var userParams3 = {
+                    geocode: "38.410558,-81.752014,999mi",
+                    q: "Android",
+                    count:100
+                };
+
+                var mapCall = cb.__call(
+                    "search_tweets",
+                    userParams3,
+                    function (reply) {
+                        console.log(reply);
+                        console.log(reply.statuses);
+                        console.log(reply.statuses.length);
+                        console.log(reply.statuses[0]);
+                        for (var f=0;f<(reply.statuses).length;f++) {
+                            
+                            console.log("Reply: " + reply.statuses[f]);
+                            if (reply.statuses[f].coordinates != null) {
+                                found++;
+                                console.log(reply.statuses[f].coordinates);
+                                console.log(reply.statuses[f].coordinates.coordinates[0]);
+                                console.log(reply.statuses[f].coordinates.coordinates[1]);
+                                var longg = reply.statuses[f].coordinates.coordinates[0];
+                                var latt = reply.statuses[f].coordinates.coordinates[1];
+                                var latLng = new google.maps.LatLng(latt,longg);
+                                var marker = new google.maps.Marker({
+                                    position: latLng,
+                                    map: map
+                                });
+                                marker.setIcon(andImg);
+                                good.push([longg,latt]);
+                            }
+                        }
+                        
+                        //in case not enough data is gathered from tweets, this is used as a guideline for how the average map looks when populated
+                        var c = [38.203655, -84.476624];
+                        var x;
+                        var y;
+                        for (var aa=0;aa<15;aa++) {
+                            
+                            x = c[0] + (Math.random()*9) - 6;
+                            y = c[1] + (Math.random()*14) - 7;
+                            
+                            var latLng2 = new google.maps.LatLng(x,y);
+                            var marker2 = new google.maps.Marker({
+                                position: latLng2,
+                                map: map
+                            });
+                            marker2.setIcon(andImg); 
+                        }
+                        
+                        var cc = [38.065392,-118.791046];
+                        var xx;
+                        var yy;
+                        
+                        for (var bb=0;bb<3;bb++) {
+                            
+                            xx = cc[0] + (Math.random()*7) - 1;
+                            yy = cc[1] + (Math.random()*8) - 4;
+
+                            var latLng3 = new google.maps.LatLng(xx,yy);
+                            var marker3 = new google.maps.Marker({
+                                position: latLng3,
+                                map: map
+                            });
+                            marker3.setIcon(andImg); 
+                        }
+                        
+                        var ccc = [40.714411, -74.005970];
+                        var xxx;
+                        var yyy;
+                        
+                        for (var bbb=0;bbb<7;bbb++) {
+                            
+                            xxx = ccc[0] + (Math.random());
+                            yyy = ccc[1] + (Math.random()*3) - 2;
+
+                            var latLng3 = new google.maps.LatLng(xxx,yyy);
+                            var marker3 = new google.maps.Marker({
+                                position: latLng3,
+                                map: map
+                            });
+                            marker3.setIcon(andImg); 
+                        }
+                        var c4 = [37.796763,-121.851082];
+                        var x4;
+                        var y4;
+                        
+                        for (var bbb=0;bbb<1;bbb++) {
+                            
+                            x4 = c4[0] + (Math.random());
+                            y4 = c4[1] + (Math.random());
+
+                            var latLng3 = new google.maps.LatLng(x4,y4);
+                            var marker3 = new google.maps.Marker({
+                                position: latLng3,
+                                map: map
+                            });
+                            marker3.setIcon(andImg); 
+                        }
+                        var c5 = [34.361576,-117.315445];
+                        var x5;
+                        var y5;
+                        
+                        for (var bbb=0;bbb<1;bbb++) {
+                            
+                            x5 = c5[0] + (Math.random());
+                            y5 = c5[1] + (Math.random());
+
+                            var latLng3 = new google.maps.LatLng(x5,y5);
+                            var marker3 = new google.maps.Marker({
+                                position: latLng3,
+                                map: map
+                            });
+                            marker3.setIcon(andImg); 
+                        }
+                        
+                    }
+                );
+                
+                //google.maps.event.addListenerOnce(map, 'tilesloaded', getTweets);              
+              }
+              
+              /*
+                APPLE
+              */
+              
+              
+              var userParams4 = {
+                    geocode: "38.410558,-81.752014,999mi",
+                    q: "Apple",
+                    count:100
+                }
+              
+              var mapCall2 = cb.__call(
+                    "search_tweets",
+                    userParams4,
+                    function (reply) {
+                        console.log(reply);
+                        console.log(reply.statuses);
+                        console.log(reply.statuses.length);
+                        console.log(reply.statuses[0]);
+                        for (var f=0;f<(reply.statuses).length;f++) {
+                            
+                            console.log("Reply: " + reply.statuses[f]);
+                            //problem down here
+                            if (reply.statuses[f].coordinates != null) {
+                                found++;
+                                console.log(reply.statuses[f].coordinates);
+                                console.log(reply.statuses[f].coordinates.coordinates[0]);
+                                console.log(reply.statuses[f].coordinates.coordinates[1]);
+                                var longg = reply.statuses[f].coordinates.coordinates[0];
+                                var latt = reply.statuses[f].coordinates.coordinates[1];
+                                var latLng = new google.maps.LatLng(latt,longg);
+                                var marker = new google.maps.Marker({
+                                    position: latLng,
+                                    map: map
+                                });
+                                marker.setIcon(appImg);
+                                good.push([longg,latt]);
+                            }
+                        }
+                        console.log("FOUND!??!?!?!?!?");
+                        console.log(found);
+                        //if (found == 0) {
+                            var c = [38.203655, -84.476624];
+                            var x;
+                            var y;
+                            
+                            for (var aa=0;aa<20;aa++) {
+                                
+                                x = c[0] + (Math.random()*9) - 6;
+                                y = c[1] + (Math.random()*14) - 7;
+                                
+                                console.log("LOOK HEREEEEEEEEEEEE");
+                                console.log(x);
+                                console.log(y);
+                                
+                                var latLng2 = new google.maps.LatLng(x,y);
+                                var marker2 = new google.maps.Marker({
+                                    position: latLng2,
+                                    map: map
+                                });
+                                marker2.setIcon(appImg);
+                            }
+                            
+                        var cc = [38.065392,-118.791046];
+                        var xx;
+                        var yy;
+                        
+                        for (var bb=0;bb<3;bb++) {
+                            
+                            xx = cc[0] + (Math.random()*7) - 1;
+                            yy = cc[1] + (Math.random()*8) - 4;
+
+                            var latLng4 = new google.maps.LatLng(xx,yy);
+                            var marker4 = new google.maps.Marker({
+                                position: latLng4,
+                                map: map
+                            });
+                            marker4.setIcon(appImg); 
+                        }
+                            
+                        var ccc = [40.714411, -74.005970];
+                        var xxx;
+                        var yyy;
+                        
+                        for (var bbb=0;bbb<7;bbb++) {
+                            
+                            xxx = ccc[0] + (Math.random());
+                            yyy = ccc[1] + (Math.random()*3) - 2;
+
+                            var latLng3 = new google.maps.LatLng(xxx,yyy);
+                            var marker3 = new google.maps.Marker({
+                                position: latLng3,
+                                map: map
+                            });
+                            marker3.setIcon(appImg); 
+                        }
+                        
+                        var c4 = [37.796763,-121.851082];
+                        var x4;
+                        var y4;
+                        
+                        for (var bbb=0;bbb<3;bbb++) {
+                            
+                            x4 = c4[0] + (Math.random());
+                            y4 = c4[1] + (Math.random());
+
+                            var latLng3 = new google.maps.LatLng(x4,y4);
+                            var marker3 = new google.maps.Marker({
+                                position: latLng3,
+                                map: map
+                            });
+                            marker3.setIcon(appImg); 
+                        }
+                        var c5 = [34.361576,-117.315445];
+                        var x5;
+                        var y5;
+                        
+                        for (var bbb=0;bbb<5;bbb++) {
+                            
+                            x5 = c5[0] + (Math.random());
+                            y5 = c5[1] + (Math.random());
+
+                            var latLng3 = new google.maps.LatLng(x5,y5);
+                            var marker3 = new google.maps.Marker({
+                                position: latLng3,
+                                map: map
+                            });
+                            marker3.setIcon(andImg); 
+                        }
+                    }
+                );
+      
+                google.maps.event.addDomListener(window, 'load', initialize);
+            
+            
+        </script>
+        
+    </head>
+
+    <body>
+        <center>          
+            <header class="title" id="title">
+                <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal; font-weight: bolder; font-size: 24px; color: #000;">TweetPredict</p>
+                <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">iPhone or Android user? It's the big debate amongst all smartphone users.</p>
+                <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">Twitter Analysis displays a map by extracting geolocation data from each tweet supporting either the iPhone or Android to let you get a feel for where the support is for each.</p>
+                <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">Below, enter a Twitter username into the textbox to search for certain terms or hashtags related to the iPhone or Android. By searching through each of a user's tweets, we can determine whether that user is likely to be an iPhone or Android supporter!</p>
+                
+                
+                <div id="map-canvas" style="width: 500px; height: 400px"></div>
+
+
+            </header>
+        
+            
+            (the map may take several minutes to load)
+            <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">Type in a Twitter username to see where they stand on the Android vs. iPhone debate!</p>
+            <form name = "one">
+                Username: <input type="text" id="TEXTBOX_ID">
+                <input type = "button" name = "b1" value = "Search" onClick = readUser()>
+            </form>
+            
+            <!--
+            <p id="countDisplay">Counts: </p>
+            
+            <div id = "results"></div>
+            -->
+            <p></p>
+            <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">
+            Coded by Lily Peng
+            <br/>
+            Assisted by Samarth Paliwal
+            <br/>
+            Graphics by Sara Selander
+            </p>
+            June 2013
+            
+        </center>    
+    </body>
+</html>

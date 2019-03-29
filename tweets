@@ -1,0 +1,21 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            function myFunc(data) {
+                console.log(data);
+            }
+            $.ajax({
+                url: 'https://api.twitter.com/1.1/search/tweets.json?q='+"Twitter",
+                dataType: 'jsonp',
+                crossDomain: true,
+                beforeSend: function(request) {
+                    request.setRequestHeader("Authorization", 'oauth_consumer_key="rtWMkk73ERzBo0yvZ8SwFA", oauth_nonce="7fd7541c0b5a8024314399e199b4a3a5", oauth_signature="gPefMLjAJv8jIAU%2FhccdxrRF%2BOA%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1373984763", oauth_token="219779796-UDATLrDNeVX9OGBEPTi50Nm63e2pztORMKswWQ2Y", oauth_version="1.0"')
+                    window.console.log('starting AJAX request to get Twitter data');
+                },
+                success: function(result) {
+                    window.console.log("success");
+                },
+                error: function(result) {
+                    window.console.log("error");
+                }
+            });
+        </script>

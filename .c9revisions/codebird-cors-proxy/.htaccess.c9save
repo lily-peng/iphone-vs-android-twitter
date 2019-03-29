@@ -1,0 +1,4 @@
+{"ts":1374621715923,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1374621721205,"patch":[[{"diffs":[[1,"<IfModule mod_rewrite.c>\r\n    RewriteEngine On\r\n    RewriteRule . codebird-cors-proxy.php [L,QSA]\r\n</IfModule>"]],"start1":0,"start2":0,"length1":0,"length2":110}]],"length":110,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1374622056053,"patch":[[{"diffs":[[0,"fModule>"],[1,"\r\n\r\n<IfModule mod_rewrite.c>\r\n    RewriteEngine On\r\n    RewriteRule . codebird-cors-proxy.php [L,QSA]\r\n</IfModule>"]],"start1":102,"start2":102,"length1":8,"length2":122}]],"length":224,"saved":false}
+{"ts":1374622058826,"patch":[[{"diffs":[[0,"ule>"],[-1,"\r\n\r\n<IfModule mod_rewrite.c>\r\n    RewriteEngine On\r\n    RewriteRule . codebird-cors-proxy.php [L,QSA]\r\n</IfModule>"]],"start1":106,"start2":106,"length1":118,"length2":4}]],"length":110,"saved":false}

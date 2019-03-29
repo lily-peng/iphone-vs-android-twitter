@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+    <head>
+        <center><img src="http://i.imgur.com/Cbp5C26.jpg"></img></center>
+        <script type="text/javascript" src="sha1.js"></script>
+        <script type="text/javascript" src="codebird.js"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+        
+        <script type="text/javascript">
+            var cb = new Codebird;
+            cb.setConsumerKey("rtWMkk73ERzBo0yvZ8SwFA", "JaCfJy8LEiwVNN6MhZTg2POqumH8SQjNHnDuEF8KI4");
+            cb.setToken("219779796-UDATLrDNeVX9OGBEPTi50Nm63e2pztORMKswWQ2Y", "QJ9HnHcVkPe29OfDRaLWuS5Px4J1gZObVanRKZ4psMA");
+            
+            
+            
+                
+            function initialize() {
+                var mapDiv = document.getElementById('map-canvas');
+                map = new google.maps.Map(mapDiv, {
+                  center: new google.maps.LatLng(38, -97),
+                  zoom: 3,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+                
+                console.log("here1");
+                
+                var userParams3 = {
+                    geocode: "38.410558,-81.752014,999mi",
+                    q: "Android",
+                    count:100
+                };
+                
+                var mapCall = cb.__call(
+                    "search_tweets",
+                    userParams3,
+                    function (reply) {
+                        console.log(reply);
+                        console.log(reply.statuses);
+                        console.log(reply.statuses.length);
+                        console.log(reply.statuses[0]);
+                        for (var f=0;f<(reply.statuses).length;f++) {
+                            console.log("Reply: " + reply.statuses[f]);
+                            //problem down here
+                            if (reply.statuses[f].coordinates != null) {
+                                //these vars are wrong
+                                console.log(reply.statuses[f].coordinates);
+                                console.log(reply.statuses[f].coordinates.coordinates[0]);
+                                console.log(reply.statuses[f].coordinates.coordinates[1]);
+                                var longg = reply.statuses[f].coordinates.coordinates[0];
+                                var latt = reply.statuses[f].coordinates.coordinates[1];
+                                var latLng = new google.maps.LatLng(latt,longg);
+                                var marker = new google.maps.Marker({
+                                    position: latLng,
+                                    map: map
+                                });
+                            }
+                            
+                            //mapArr.push(reply);
+                        }
+                    }
+                    //true
+                );
+                
+                //google.maps.event.addListenerOnce(map, 'tilesloaded', getTweets);              
+              }
+      
+                google.maps.event.addDomListener(window, 'load', initialize);
+            
+            
+        </script>
+        
+    </head>
+
+    <body>
+        <center>          
+            <header class="title" id="title">
+                <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal; font-weight: bolder; font-size: 24px; color: #000;">The Twitter Prediction Project</p>
+                <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">iPhone or Android user? It's the big debate amongst all smartphone users.</p>
+                <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">Twitter Analysis displays a map by extracting geolocation data from each tweet supporting either the iPhone or Android to let you get a feel for where the support is for each.</p>
+                <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">Below, enter a Twitter username into the textbox to search for certain terms or hashtags related to the iPhone or Android. By searching through each of a user's tweets, we can determine whether that user is likely to be an iPhone or Android supporter!</p>
+                
+                
+                <div id="map-canvas" style="width: 500px; height: 400px"></div>
+
+
+            </header>
+        
+            
+            
+            <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">Type in a Twitter username to see where they stand on the Android vs. iPhone debate!</p>
+            <form name = "one">
+                Username: <input type="text" id="TEXTBOX_ID">
+                <input type = "button" name = "b1" value = "Search" onClick = readUser()>
+            </form>
+            
+            <!--
+            <p id="countDisplay">Counts: </p>
+            
+            <div id = "results"></div>
+            -->
+            <p></p>
+            <p style="font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, sans-serif; font-style: normal;">
+            by Lily Peng
+            <br/>
+            Samarth Paliwal
+            <br/>
+            Sara Selander
+            </p>
+            
+            
+        </center>    
+    </body>
+</html>
